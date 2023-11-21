@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: db.dockerfile
+    hostname: db_server
+    networks:
+      - db_nw
+    ports:
+      - target: 5432
+        published: 5432
+    volumes:
+      - type: bind
+        source: initdb
+        target: /docker-entrypoint-initdb.d
+networks:
+  db_nw:
+    external: false
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.10.0/24
