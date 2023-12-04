@@ -11,7 +11,7 @@ class Map(BaseEntity):
     x = models.IntegerField(null=False)
     y = models.IntegerField(null=False)
     z = models.IntegerField(null=False)
-    pallete_id = models.ManyToManyField(Palette,
+    palette_id = models.ManyToManyField(Palette,
                                         through="MapsPalettes",
                                         related_name="maps_palettes")
 
