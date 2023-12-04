@@ -1,5 +1,5 @@
 CREATE TABLE sample_app.scenario_loads(
-    id serial NOT NULL,
+    id serial PRIMARY KEY,
     scenario_id integer NOT NULL,
     scenario_seq integer NOT NULL,
     pallet_id integer NOT NULL,

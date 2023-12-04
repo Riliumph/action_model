@@ -1,5 +1,5 @@
 CREATE TABLE sample_app.actions_params_rules(
-    id serial NOT NULL,
+    id serial PRIMARY KEY,
     action_id integer NOT NULL,
     weather text NOT NULL,
     parameter_gid integer NOT NULL,
