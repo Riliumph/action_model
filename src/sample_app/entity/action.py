@@ -14,6 +14,14 @@ class Action(BaseEntity):
     unit_action = models.ManyToManyField("Action",
                                          through="ActionLink",
                                          related_name=TABLE_NAME)
+    # ActionとActionParameterはActionsParametersRuleで多対多を組むべきである。
+    # ActionParameterはEAVが採用されていて外部キーを張れていない
+    # Action -(action_id) - ActionsParamsRules -(parameter_gid)- ActionParameters
+    # parameter_gidなんてのを定義せず、parameter_idを多対多で構築すれば問題なかった。
+    # TODO: 要実験
+    # ActionsParamsRulesは条件が書かれているので、
+    # 条件 x パラメータ分のIDでテーブルは作れそう。
+    # ただし、バカみたいな行数になるし、グループ化するのがレコードなのでは？？？？？
     # parameters = models.ManyToManyField("ActionParameter",
     #                                     through="ActionsParamsRule",
     #                                     related_name="actions_params_rule")
@@ -23,6 +31,7 @@ class Action(BaseEntity):
 
 
 class ActionSerializer(ModelSerializer):
+    # UI一発でやりたい場合、serializerを入れたらいいけど、Listってどうやるんや？
     class Meta:
         model = Action
         fields = '__all__'
