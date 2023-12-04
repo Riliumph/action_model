@@ -9,16 +9,12 @@ logger = logging.getLogger("app")
 
 
 class RUD(RetrieveUpdateDestroyAPIView):
-    serializer_class = ActionLinkSerializer
     lookup_field = ActionLink._meta.pk.name
-
-    def get_queryset(self):
-        return ActionLink.objects.all().order_by(self.lookup_field)
+    queryset = ActionLink.objects.all()
+    serializer_class = ActionLinkSerializer
 
 
 class LC(ListCreateAPIView):
-    serializer_class = ActionLinkSerializer
     lookup_field = ActionLink._meta.pk.name
-
-    def get_queryset(self):
-        return ActionLink.objects.all().order_by(self.lookup_field)
+    queryset = ActionLink.objects.all()
+    serializer_class = ActionLinkSerializer

@@ -5,7 +5,8 @@ CREATE TABLE sample_app.actions_params_rules(
     parameter_gid integer NOT NULL,
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP,
     updated_at timestamptz DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (action_id) REFERENCES sample_app.actions (action_id) --    FOREIGN KEY (parameter_gid) REFERENCES sample_app.action_parameters (parameter_gid)
+    --    FOREIGN KEY (parameter_gid) REFERENCES sample_app.action_parameters (parameter_gid)
+    FOREIGN KEY (action_id) REFERENCES sample_app.actions (action_id)
 );
 
 INSERT INTO

@@ -4,7 +4,7 @@ from rest_framework.serializers import ModelSerializer
 from base.entity import BaseEntity
 
 
-class ActionParameter(BaseEntity):
+class ScenarioParameter(BaseEntity):
     parameter_id = models.AutoField(primary_key=True)
     parameter_gid = models.IntegerField(null=False)
     p_key = models.TextField(null=False)
@@ -17,7 +17,7 @@ class ActionParameter(BaseEntity):
         ]
 
 
-class ActionParameterSerializer(ModelSerializer):
+class ScenarioParameterSerializer(ModelSerializer):
     class Meta:
-        model = ActionParameter
+        model = ScenarioParameter
         fields = '__all__'

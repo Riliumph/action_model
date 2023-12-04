@@ -4,7 +4,7 @@ CREATE TABLE sample_app.maps_palettes(
     palette_id int NOT NULL,
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP,
     updated_at timestamptz DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (grid_id) REFERENCES sample_app.global_maps(grid_id),
+    FOREIGN KEY (grid_id) REFERENCES sample_app.maps(grid_id),
     FOREIGN KEY(palette_id) REFERENCES sample_app.palettes(palette_id)
 );
 

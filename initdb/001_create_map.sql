@@ -1,4 +1,4 @@
-CREATE TABLE sample_app.global_maps(
+CREATE TABLE sample_app.maps(
     grid_id serial PRIMARY KEY,
     -- 本来は外部キー
     map_id integer NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE sample_app.global_maps(
 );
 
 INSERT INTO
-    sample_app.global_maps(map_id, x, y, z)
+    sample_app.maps(map_id, x, y, z)
 VALUES
     (1, 0, 0, 0),
     (1, 0, 1, 0),
