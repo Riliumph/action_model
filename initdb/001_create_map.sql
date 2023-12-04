@@ -1,10 +1,10 @@
 CREATE TABLE sample_app.global_maps(
     grid_id serial PRIMARY KEY,
     -- 本来は外部キー
-    map_id int NOT NULL,
-    x int NOT NULL,
-    y int NOT NULL,
-    z int NOT NULL,
+    map_id integer NOT NULL,
+    x integer NOT NULL,
+    y integer NOT NULL,
+    z integer NOT NULL,
     created_at timestamptz DEFAULT CURRENT_TIMESTAMP,
     updated_at timestamptz DEFAULT CURRENT_TIMESTAMP,
     UNIQUE(map_id, x, y, z)

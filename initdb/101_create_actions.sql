@@ -1,5 +1,3 @@
-CREATE SCHEMA sample_app;
-
 CREATE TABLE sample_app.actions (
     action_id serial PRIMARY KEY,
     action_name text NOT NULL,
