@@ -1,0 +1,12 @@
+{
+  "usecase": {
+    "usecase_name": "ユースケース1",
+    "action_list": [
+      {
+        "action_id": 1,
+        "exec_condition": "進行状況 = ready",
+        "exit_condition": "進行状況 = success"
+      }
+    ]
+  }
+}

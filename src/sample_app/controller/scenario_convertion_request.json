@@ -1,0 +1,280 @@
+{
+  "action_list": [
+    {
+      // 一つ目の機器の動作モデル
+      "action_sets": [
+        {
+          "action": {
+            "action_id": 1,
+            "action_name": "ユースケース1"
+          },
+          "action_list": [
+            {
+              "root_action_id": 1,
+              "action_id": 2
+            },
+            {
+              "root_action_id": 1,
+              "action_id": 3
+            },
+            {
+              "root_action_id": 1,
+              "action_id": 4
+            },
+            {
+              "root_action_id": 1,
+              "action_id": 5
+            }
+          ],
+          "action_exec_conditions": [
+            {
+              "action_id": 2,
+              "l_value": "select hoge from fuga",
+              "operator": "=",
+              "r_value": "1"
+            }
+          ]
+        },
+        {
+          "action": {
+            "action_id": 2,
+            "action_name": "移動"
+          },
+          "actions_params_rules": [
+            {
+              "action_id": 2,
+              "weather": "sun",
+              "parameter_gid": 1
+            },
+            {
+              "action_id": 2,
+              "weather": "rain",
+              "parameter_gid": 2
+            }
+          ],
+          "action_parameter": [
+            {
+              "parameter_gid": 1,
+              "key": "safety",
+              "value": "1"
+            },
+            {
+              "parameter_gid": 1,
+              "key": "emergency",
+              "value": "1"
+            },
+            {
+              "parameter_gid": 1,
+              "key": "precise",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "safety",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "emergency",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "precise",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "action": {
+            "action_id": 3,
+            "action_name": "荷揚げ"
+          },
+          "actions_params_rules": [
+            {
+              "action_id": 3,
+              "weather": "sun",
+              "parameter_gid": 3
+            }
+          ],
+          "action_parameter": [
+            {
+              "parameter_gid": 3,
+              "key": "safety",
+              "value": "3"
+            },
+            {
+              "parameter_gid": 3,
+              "key": "emergency",
+              "value": "3"
+            },
+            {
+              "parameter_gid": 3,
+              "key": "precise",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "action": {
+            "action_id": 2,
+            "action_name": "移動"
+          },
+          "actions_params_rules": [
+            {
+              "action_id": 2,
+              "weather": "sun",
+              "parameter_gid": 1
+            },
+            {
+              "action_id": 2,
+              "weather": "rain",
+              "parameter_gid": 2
+            }
+          ],
+          "action_parameter": [
+            {
+              "parameter_gid": 1,
+              "key": "safety",
+              "value": "1"
+            },
+            {
+              "parameter_gid": 1,
+              "key": "emergency",
+              "value": "1"
+            },
+            {
+              "parameter_gid": 1,
+              "key": "precise",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "safety",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "emergency",
+              "value": "2"
+            },
+            {
+              "parameter_gid": 2,
+              "key": "precise",
+              "value": "2"
+            }
+          ]
+        },
+        {
+          "action": {
+            "action_id": 4,
+            "action_name": "フォーク回転"
+          },
+          "actions_params_rules": [
+            {
+              "action_id": 4,
+              "weather": "sun",
+              "parameter_gid": 4
+            }
+          ],
+          "action_parameter": [
+            {
+              "parameter_gid": 4,
+              "key": "safety",
+              "value": "4"
+            },
+            {
+              "parameter_gid": 4,
+              "key": "emergency",
+              "value": "4"
+            },
+            {
+              "parameter_gid": 4,
+              "key": "precise",
+              "value": "4"
+            }
+          ]
+        },
+        {
+          "action": {
+            "action_id": 5,
+            "action_name": "荷下ろし"
+          },
+          "actions_params_rules": [
+            {
+              "action_id": 5,
+              "weather": "sun",
+              "parameter_gid": 5
+            },
+            {
+              "action_id": 6,
+              "weather": "rain",
+              "parameter_gid": 6
+            }
+          ],
+          "action_parameter": [
+            {
+              "parameter_gid": 5,
+              "key": "safety",
+              "value": "5"
+            },
+            {
+              "parameter_gid": 5,
+              "key": "emergency",
+              "value": "5"
+            },
+            {
+              "parameter_gid": 5,
+              "key": "precise",
+              "value": "5"
+            },
+            {
+              "parameter_gid": 6,
+              "key": "safety",
+              "value": "6"
+            },
+            {
+              "parameter_gid": 6,
+              "key": "emergency",
+              "value": "6"
+            },
+            {
+              "parameter_gid": 6,
+              "key": "precise",
+              "value": "6"
+            }
+          ]
+        }
+      ]
+      // 二つ目の機器の動作モデル
+      // etc...
+    }
+  ],
+  "user_data": {
+    // どうせ書き換えるんだし、Actionの名前書き換えてくれば？
+    "scenario_name": "duga",
+    "destinations": [
+      {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      {
+        "x": 2,
+        "y": 2,
+        "z": 0
+      }
+    ],
+    "load": {
+      "palette_id": 1
+    },
+    "fork_rotation": {
+      "angle": "0.1"
+    },
+    "unload": {
+      "x": 3,
+      "y": 3,
+      "z": 0
+    }
+  }
+}

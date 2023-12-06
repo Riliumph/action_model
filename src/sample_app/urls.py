@@ -1,6 +1,7 @@
 from django.urls import path
 
-from sample_app.controller import action, action_link, map, palette
+from sample_app.controller import (action, action_link, map, palette,
+                                   scenario_conversion)
 
 urlpatterns = [
     path('v1/actions/', action.LC.as_view()),
@@ -10,4 +11,5 @@ urlpatterns = [
          action_link.RUD.as_view()),
     path('v1/palettes/', palette.LC.as_view()),
     path('v1/maps/', map.LC.as_view()),
+    path('v1/scenario_convertion/', scenario_conversion.LC.as_view())
 ]
