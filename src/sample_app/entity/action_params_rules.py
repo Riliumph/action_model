@@ -2,12 +2,12 @@ from django.db import models
 from rest_framework.serializers import ModelSerializer
 
 from base.entity import BaseEntity
-from sample_app.entity import action
+from sample_app.entity.action import Action
 
 
 class ActionsParamsRule(BaseEntity):
     id = models.AutoField(primary_key=True)
-    action_id = models.ForeignKey(action.Model,
+    action_id = models.ForeignKey(Action,
                                   db_column="action_id",
                                   on_delete=models.CASCADE)
     weather = models.TextField(null=False)
