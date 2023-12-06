@@ -8,16 +8,18 @@ from sample_app.entity.action import *
 logger = logging.getLogger("app")
 
 
-class RUD(RetrieveUpdateDestroyAPIView):
-    '''ActionのRead/Update/Delete
+class LC(ListCreateAPIView):
+    '''ActionのList/Create
+    単体のデータを作成するAPI
     '''
     lookup_field = Action._meta.pk.name
     serializer_class = ActionSerializer
     queryset = Action.objects.all()
 
 
-class LC(ListCreateAPIView):
-    '''ActionのList/Create
+class RUD(RetrieveUpdateDestroyAPIView):
+    '''ActionのRead/Update/Delete
+    単体のデータを処理するAPI
     '''
     lookup_field = Action._meta.pk.name
     serializer_class = ActionSerializer

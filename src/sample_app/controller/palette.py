@@ -10,15 +10,17 @@ logger = logging.getLogger("app")
 
 class RUD(RetrieveUpdateDestroyAPIView):
     '''パレットのRead/Update/Delete
+    パレットの情報と多対多を組んでいるグリッドを同時に取得する
     '''
     lookup_field = Palette._meta.pk.name
-    serializer_class = PaletteSerializer
     queryset = Palette.objects.all()
+    serializer_class = PaletteSerializer
 
 
 class LC(ListCreateAPIView):
     '''パレットのList/Create
+    パレットの情報と多対多を組んでいるグリッドを同時に取得する
     '''
     lookup_field = Palette._meta.pk.name
-    serializer_class = PaletteSerializer
     queryset = Palette.objects.all()
+    serializer_class = PaletteSerializer

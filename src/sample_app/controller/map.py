@@ -9,16 +9,18 @@ logger = logging.getLogger("app")
 
 
 class RUD(RetrieveUpdateDestroyAPIView):
-    '''パレットのRead/Update/Delete
+    '''マップのRead/Update/Delete
+    マップに存在するパレットも同時に取得
     '''
     lookup_field = GlobalMap._meta.pk.name
-    serializer_class = MapSerializer
     queryset = GlobalMap.objects.all()
+    serializer_class = MapSerializer
 
 
 class LC(ListCreateAPIView):
     '''パレットのList/Create
+    マップに存在するパレットも同時に取得
     '''
     lookup_field = GlobalMap._meta.pk.name
-    serializer_class = MapSerializer
     queryset = GlobalMap.objects.all()
+    serializer_class = MapSerializer
