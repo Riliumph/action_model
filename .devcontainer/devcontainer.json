@@ -51,6 +51,7 @@
 				"shardulm94.trailing-spaces",
 				"DavidAnson.vscode-markdownlint",
 				"richie5um2.vscode-sort-json",
+				"AykutSarac.jsoncrack-vscode",
 				"adpyke.vscode-sql-formatter",
 				"eamodio.gitlens",
 				"mhutchie.git-graph",
