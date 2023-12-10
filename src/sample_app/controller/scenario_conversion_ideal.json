@@ -1,5 +1,5 @@
 {
-  "usecases": {
+  "usecase": {
     "usecase_name": "ユースケース1",
     "action_list": [
       {
