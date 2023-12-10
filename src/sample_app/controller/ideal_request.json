@@ -1,11 +1,76 @@
 {
-  "usecase": {
+  "usecases": {
     "usecase_name": "ユースケース1",
     "action_list": [
       {
-        "action_id": 1,
-        "exec_condition": "進行状況 = ready",
-        "exit_condition": "進行状況 = success"
+        "action_name": "移動",
+        "exec_condition": {
+          "l_value": "進行状況",
+          "operator": "=",
+          "r_value": "ready",
+        },
+        "exit_condition": {
+          "l_value": "進行状況",
+          "operator": "=",
+          "r_value": "success"
+        },
+        "parameter_switch_rules": [
+          {
+            "weather": "sun",
+            "parameter": {
+              "safety": 1,
+              "precise": 1,
+              "accuracy": 1
+            }
+          },
+          {
+            "weather": "rain",
+            "parameter": {
+              "safety": 2,
+              "precise": 2,
+              "accuracy": 2
+            }
+          }
+        ]
+      },
+      {
+        "action_name": "荷揚げ",
+        "parameter_switch_rules": [
+          {
+            "weather": "sun",
+            "parameters": {
+              "safety": 3,
+              "precise": 3,
+              "accuracy": 3
+            }
+          }
+        ]
+      },
+      {
+        "action_name": "フォーク回転",
+        "parameter_switch_rules": [
+          {
+            "weather": "sun",
+            "parameters": {
+              "safety": 4,
+              "precise": 4,
+              "accuracy": 4
+            }
+          }
+        ]
+      },
+      {
+        "action_name": "荷下ろし",
+        "parameter_switch_rules": [
+          {
+            "weather": "sun",
+            "parameters": {
+              "safety": 4,
+              "precise": 4,
+              "accuracy": 4
+            }
+          }
+        ]
       }
     ]
   }
